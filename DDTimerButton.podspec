@@ -1,5 +1,4 @@
-  Write an awesome description for your new site here. You can edit this
-d::Spec.new do |s|
+Pod::Spec.new do |s|
   s.name             = "DDTimerButton"
   s.version          = "1.0.0"
   s.summary          = "A verify code button"
