@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic)  DDTimerButton *b1;
 
+@property (strong, nonatomic)  DDTimerButton *b2;
+
 @end
 
 @implementation ViewController
@@ -34,6 +36,22 @@
     
     _b1.frame = CGRectMake(100, 200, 200, 32);
     
+    self.b2 = [[DDTimerButton alloc] initWithInterval:60 title:@"发送验证码"];
+    self.b2.sendVerifyCodeBlock = ^{
+        return YES;
+    };
+    self.b2.finishVerifyBlock = ^ {
+        [weakSelf.b2 setTitle:@"重新发送" forState:UIControlStateNormal];
+    };
+    
+    [self.b2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    
+    [self.b2 sizeToFit];
+    
+    self.b2.frame = CGRectMake(100, 400, 200, 32);
+
+    
+    [self.view addSubview:self.b2];
     [self.view addSubview:self.b1];
     
     

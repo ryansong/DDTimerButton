@@ -172,10 +172,6 @@ static NSString *const  progressTitleFormat = @"%d 秒";
     if (!identifer) {
         return;
     }
-
-    if (self.identifierDict) {
-        _identifierDict = [NSMutableDictionary dictionary];
-    }
     
     [self.identifierDict setObject:@(expiredTime) forKey:identifer];
     [[NSUserDefaults standardUserDefaults] setObject:self.identifierDict forKey:USERDEFAULT_TIMER_INDENTIFIER_KEY];
@@ -211,6 +207,10 @@ static NSString *const  progressTitleFormat = @"%d 秒";
 {
     if (!_identifierDict) {
         _identifierDict = [[[NSUserDefaults standardUserDefaults] objectForKey:USERDEFAULT_TIMER_INDENTIFIER_KEY] mutableCopy];
+        
+        if (!_identifierDict) {
+            _identifierDict = [NSMutableDictionary dictionary];
+        }
     }
     return _identifierDict;
 }
