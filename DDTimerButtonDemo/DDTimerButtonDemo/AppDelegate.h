@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  DDTimerButton
+//  DDTimerButtonDemo
 //
-//  Created by xiaomingsong on 11/8/15.
-//  Copyright © 2015 xiaomingsong. All rights reserved.
+//  Created by xiaomingsong on 10/9/16.
+//  Copyright © 2016 xiaomingsong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
